@@ -46,7 +46,7 @@ input#password {
   padding:5px;
 }
 
-button.copy-div {
+button.copy-btn {
   background: transparent;
   cursor:pointer;
   overflow: hidden;
