@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <meta lang="en" />
+  <meta name="description" content="This is Password Generator where you can generate complex passwords and copy them." />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+</head>
+
+<body>
+  <section>
+    <h1>Password Generator</h1>
+
+    <div class="password-div">
+      <input id='password' aria-label="password" value="asdfghjhg" disabled/>
+      <button class="copy-div">
+        <img class="copy-img" src="./assets/images/copy.png" alt="copy-icon" />
+      </button>
+    </div>
+
+    <div class="password-content">
+      <label for="password-length">Password length</label>
+      <input id="password-length" type="number" value="16" />
+    </div>
+
+    <div class="password-content">
+      <label for="uppercase">Include uppercase letters</label>
+      <input type="checkbox" id='uppercase' />
+    </div>
+
+    <div class="password-content">
+      <label for="lowercase">Include lowercase letters</label>
+      <input type="checkbox" id="lowercase" />
+    </div>
+
+    <div class="password-content">
+      <label for="numbers">Include numbers</label>
+      <input type="checkbox" id="numbers" />
+    </div class>
+
+    <div class="password-content">
+      <label for="symbols">Include symbols</label>
+      <input type="checkbox" id="symbols" />
+    </div>
+
+    <button class="password-generate" type="button">Generate Password</button>
+  </section>
+</body>
