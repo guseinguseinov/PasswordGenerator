@@ -26,6 +26,11 @@ const generatePassword = function () {
 
   if (isSymbolsIncluded.checked) characters += symbols;
 
+  if (characters.length === 0) {
+    alert('Choose which characters will be in your password.');
+    return;
+  }
+
   for (let i = 0; i < passwordLength.value; i ++) {
     passwd += characters[Math.floor(Math.random()*characters.length)];
   }
