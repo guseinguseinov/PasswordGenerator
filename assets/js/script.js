@@ -8,31 +8,35 @@ var copyButton = document.querySelector('button.copy-btn');
 var generatePasswordButton = document.querySelector('button.password-generate');
 
 // password components
-var uppercase = 'QWERTYUIOPASDFGHJKLZXCVBNM';
-var lowercase = uppercase.toLowerCase();
+var upperCase = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+var lowerCase = upperCase.toLowerCase();
 var numbers = '1234567890';
-var symbols = '~!@#$%^&*()_,./\|[]+=-<>';
-
+var symbols = '_/\|[]<>!@#$%^&*()';
 
 const generatePassword = function () {
 
+  let characters = '';
+  let passwd = '';
 
+  if (isUpperIncluded.checked) characters += upperCase;
 
+  if (isLowerIncluded.checked) characters += lowerCase;
 
+  if (isNumbersIncluded.checked) characters += numbers;
+
+  if (isSymbolsIncluded.checked) characters += symbols;
+
+  for (let i = 0; i < passwordLength.value; i ++) {
+    passwd += characters[Math.floor(Math.random()*characters.length)];
+  }
+  password.value = passwd;
 }
 
 const copyPassword = function () {
   password.select();
   navigator.clipboard.writeText(password.value);
-  password.value = '';
   alert('Text Copied to Clipboard');
 }
 
 generatePasswordButton.onclick = generatePassword;
-
 copyButton.onclick = copyPassword;
-
-
-
-console.log(isSymbolsIncluded.checked);
-console.log(passwordLength.value);
